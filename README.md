@@ -1,9 +1,56 @@
-# BRCA2-reversion-code
-Code used to analyze allele frequencies in Horacek et al., 2026
+# BRCA2 Reversion Analysis
 
-## System requirements
+This repository contains custom analysis scripts used to process CRISPResso2 output files, calculate allele and sgRNA frequencies, compute log2 fold changes, and generate figures for the study:
 
-1) For all analysis software use CRISPResso allele_frequency.txt files as input and ensure they are named in the following format {condition}_{biological replicate}. For example day_7_A, nira_B, mock_C.
-2) Input of the number of technical PCR replicates is not required.
-3) Additional inputs include an annotation file with sequence annotations for the gene of interest, along with relevant sgRNAs.
-4) The reversion allele frequency analysis and specefic HDR allele frequency analysis codes require custom input sequences, including: the DNA sequence where translation should start and end (6 bp is typical, start and stop locations depend on the location of the primary frameshift mutation and sgRNA(s) used to induce edits), and both the wild-type and un-modified frameshift translated sequences. 
+**Decoding the BRCA2 reversion principles underlying PARP inhibitor resistance**
+
+## Overview
+The scripts in this repository were used for analyses including:
+
+- Quantification of allele frequencies from CRISPResso2 output
+- Classification of alleles as frameshift, in-frame, wild-type, compound frameshift, or reversion.
+- Calculation of normalized allele frequencies and log2 fold changes across treatment conditions.
+- Analysis of sgRNA enrichment from pooled BRCA2 sgRNA library screens. 
+- Analysis of HDR-based reversion experiments in BRCA2 exons 5, 17 and 20
+- Visualization of allele-frequency, sgRNA-frequency and reversion-enrichment data
+
+## Repository contents
+
+Example analysis notebooks include:
+
+| File | Description |
+|---|---|
+| `BRCA2_sgRNA_frequency_analysis.ipynb` | Analysis of sgRNA frequencies from pooled CRISPR libraries |
+| `Reversion_allele_frequency_analysis.ipynb` | Processing and visualization of reversion allele frequencies (with p.I80Yfs5 frameshift mutant used an example) |
+| `HDR_Exon_5_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 5 |
+| `HDR_Exon_17_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 17 |
+| `HDR_Exon_20_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 20 |
+
+## Software and package versions
+
+Sequencing reads were processed using **CRISPResso2 v2.2.11** and **CRISPRessoBatch v2.2.11**. Downstream analyses were performed in **Python v3.9.15**.
+
+The main Python packages used for allele-frequency analysis, sgRNA-frequency analysis, statistical testing and plotting were:
+
+| Software/package | Version |
+|---|---:|
+| Python | 3.9.15 |
+| CRISPResso2 | 2.2.11 |
+| CRISPRessoBatch | 2.2.11 |
+| NumPy | 1.23.5 |
+| pandas | 1.5.2 |
+| SciPy | 1.9.3 |
+| Matplotlib | 3.6.2 |
+| seaborn | 0.12.2 |
+| Biopython | 1.81 |
+
+Python libraries used in the analysis included:
+
+```text
+__future__
+itertools
+re
+functools
+pathlib
+os
+glob
