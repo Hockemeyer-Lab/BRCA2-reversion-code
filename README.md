@@ -5,7 +5,7 @@ This repository contains custom analysis scripts used to process CRISPResso2 out
 **Decoding the BRCA2 reversion principles underlying PARP inhibitor resistance**
 
 ## Overview
-The scripts in this repository were used for analyses including:
+The scripts in this repository were used for:
 
 - Quantification of allele frequencies from CRISPResso2 output
 - Classification of alleles as frameshift, in-frame, wild-type, compound frameshift, or reversion.
@@ -25,6 +25,10 @@ Example analysis notebooks include:
 | `HDR_Exon_5_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 5 |
 | `HDR_Exon_17_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 17 |
 | `HDR_Exon_20_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 20 |
+
+Each notebook includes the corresponding example input and output files. The CRISPResso data in the example input file is simulated. The example input data has been significantly shortened to reduce runtime, which will vary with the number of samples and the experiment's sequencing depth. Specific instructions for each analysis are provided in the notebook.
+
+The input DNA/protein sequences in the `Reversion_allele_frequency_analysis.ipynb` script vary by experiment. For reproducibility, additional details are available in the `BRCA2_reversion_analysis_amplicon_details.xlsx` file.
 
 ## Software and package versions
 
