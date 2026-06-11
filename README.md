@@ -26,7 +26,7 @@ Example analysis notebooks include:
 | `HDR_Exon_17_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 17 |
 | `HDR_Exon_20_frequency_analysis.ipynb` | HDR-designed reversion analysis for BRCA2 exon 20 |
 
-Each notebook includes the corresponding example input and output files. The CRISPResso data in the example input files is representative but may vary in the number of technical sequencing replicates for brevity. The example input data has been significantly shortened to reduce runtime, which will vary with the number of samples and the experiment's sequencing depth. Specific instructions for each analysis are provided in the notebook.
+Each notebook includes the corresponding example input and output files. The example input data has been shortened to reduce runtime, and may vary in number of technical PCR replicates. Specific instructions for each analysis are provided in the notebook.
 
 The input DNA/protein sequences in the `Reversion_allele_frequency_analysis.ipynb` script vary by experiment. For reproducibility, additional details are available in the `BRCA2_reversion_analysis_amplicon_details.xlsx` file.
 
@@ -47,14 +47,3 @@ The main Python packages used for allele-frequency analysis, sgRNA-frequency ana
 | Matplotlib | 3.6.2 |
 | seaborn | 0.12.2 |
 | Biopython | 1.81 |
-
-Python libraries used in the analysis included:
-
-```text
-__future__
-itertools
-re
-functools
-pathlib
-os
-glob
